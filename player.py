@@ -12,8 +12,11 @@ class Player(Turtle):
         self.shape("turtle")
         self.color("red")
         self.left(90)
-        self.goto(STARTING_POSITION)
+        self.default_position()
 
     def move(self):
         """This function moves the turtle up"""
         self.forward(MOVE_DISTANCE)
+
+    def default_position(self):
+        self.goto(STARTING_POSITION)
