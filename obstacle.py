@@ -4,13 +4,14 @@ import random
 COLORS = ["medium spring green", "light sea green", "pink", "pale violet red", "medium purple", "light salmon",
           "pale green", "pale turquoise"]
 STARTING_MOVE_DISTANCE = 5
-MOVE_INCREMENT = 10
+MOVE_INCREMENT = 2
 
 
 class Obstacle:
 
     def __init__(self):
         self.obstacles = []
+        self.obstacle_speed = STARTING_MOVE_DISTANCE
 
     def generate(self):
         # To prevent the obstacle from cluster
@@ -26,5 +27,8 @@ class Obstacle:
 
     def move_obstacle(self):
         for ball in self.obstacles:
-            ball.backward(STARTING_MOVE_DISTANCE)
+            ball.backward(self.obstacle_speed)
+
+    def increase_speed(self):
+        self.obstacle_speed += MOVE_INCREMENT
 
