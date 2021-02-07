@@ -24,6 +24,15 @@ while start:
     time.sleep(0.1)
     screen.update()
 
+    obstacle.generate()
+    obstacle.move_obstacle()
+
+    # Detect collision with obstacles
+    for ball in obstacle.obstacles:
+        if ball.distance(player) < 25:
+            start = False
+            scoreboard.game_over()
+
     # Detects when the player cross the screen successfully
     if player.ycor() > 280:
         scoreboard.increase_level()
