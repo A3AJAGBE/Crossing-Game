@@ -13,3 +13,7 @@ class Player(Turtle):
         self.color("red")
         self.left(90)
         self.goto(STARTING_POSITION)
+
+    def move(self):
+        """This function moves the turtle up"""
+        self.forward(MOVE_DISTANCE)
