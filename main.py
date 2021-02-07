@@ -37,6 +37,7 @@ while start:
     if player.ycor() > 280:
         scoreboard.increase_level()
         player.default_position()
+        obstacle.increase_speed()
 
 # Close only when exited
 screen.exitonclick()
